@@ -7,7 +7,7 @@ docker.image('pro-node-playwright').inside{
     }
     stage('Install'){
         sh 'mvn -v'
-        sh 'mvn compile exec:java -Dexec.mainClass="org.example.Example"'
+        sh 'mvn compile exec:java -Dexec.mainClass=com.mycompany.app.Example'
     }
 }
 }
