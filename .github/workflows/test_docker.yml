@@ -27,4 +27,4 @@ jobs:
       - name: Test
         run: |
           CONTAINER_ID="$(docker run --rm --ipc=host -v $(pwd):/root/playwright --name playwright-docker-test -d -t ghcr.io/agaramudhala/pw-docker:main /bin/bash)"
-          docker exec "${CONTAINER_ID}" /root/playwright/tools/test-local-installation/create_project_and_run_tests.sh
+          docker exec "${CONTAINER_ID}" /root/playwright/tools/test-local-installation/create_project_and_run_tests.sh mvn -X compile exec:java -Dexec.mainClass=com.mycompany.Example
